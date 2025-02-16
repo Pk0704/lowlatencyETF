@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.10)
+project(WeatherDerivativesProject LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native -Wall")
+
+# If using external libraries (e.g., Boost), find_package(Boost ...)
+
+add_executable(WeatherDerivatives
+    src/main.cpp
+    src/DataFetcher.cpp
+    src/WeatherAnalysis.cpp
+    src/DerivativePricer.cpp
+    src/RingBuffer.cpp
+)
+
+target_include_directories(WeatherDerivatives PUBLIC include)
+# If using external libraries, link them here:
+# target_link_libraries(WeatherDerivatives PRIVATE Boost::boost)
